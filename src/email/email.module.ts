@@ -1,5 +1,3 @@
-// email.module.ts
-
 import { MailerModule } from '@nestjs-modules/mailer';
 import { EjsAdapter } from '@nestjs-modules/mailer/dist/adapters/ejs.adapter';
 import { Global, Module } from '@nestjs/common';
@@ -15,18 +13,15 @@ dotenvConfig({ path: '.env' });
       useFactory: async () => ({
         transport: {
           host: `${process.env.MAIL_HOST}`,
-          port: 465,
+          port: 587,
           secure: false,
           auth: {
             user: `${process.env.SMTP_USERNAME}`,
             pass: `${process.env.SMTP_PASSWORD}`,
           },
-          tls: {
-            rejectUnauthorized: false,
-          },
         },
         defaults: {
-          from: `"Nice App" <${process.env.SMTP_USERNAME}>`,
+          from: `AJE App <${process.env.DEFAULT_FROM}>`,
         },
         template: {
           dir: join(__dirname, 'templates'),
