@@ -4,6 +4,7 @@ import { Global, Module } from '@nestjs/common';
 import { EmailService } from './email.service';
 import { join } from 'path';
 import { config as dotenvConfig } from 'dotenv';
+import { EmailController } from './email.controller';
 dotenvConfig({ path: '.env' });
 
 @Global()
@@ -13,7 +14,7 @@ dotenvConfig({ path: '.env' });
       useFactory: async () => ({
         transport: {
           host: `${process.env.MAIL_HOST}`,
-          port: 587,
+          port: Number(`${process.env.PORT}`),
           secure: false,
           auth: {
             user: `${process.env.SMTP_USERNAME}`,
@@ -33,6 +34,7 @@ dotenvConfig({ path: '.env' });
       }),
     }),
   ],
+  controllers: [EmailController],
   providers: [EmailService],
   exports: [EmailService],
 })

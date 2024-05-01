@@ -2,7 +2,7 @@
 
 import { MailerService } from '@nestjs-modules/mailer';
 import { Injectable } from '@nestjs/common';
-import { User } from 'src/user/entity/entity';
+import { User, Users } from 'src/user/entity/entity';
 
 @Injectable()
 export class EmailService {
@@ -13,14 +13,26 @@ export class EmailService {
 
     const email = await this.mailerService.sendMail({
       to: user.email,
-      // from: '"Support Team" <support@example.com>', // override default from
-      subject: 'Welcome to Aje App! Confirm your Email',
-      template: './welcome', // `.ejs` extension is appended automatically
+      subject: 'Welcome to Aje App! Anella Testing',
+      template: './welcome',
       context: {
         name: user.name,
         confirmation_url,
       },
     });
     console.log(email);
+  }
+
+  async sendUserEmails(userData: Users) {
+    const toAddresses = userData.users.map((user) => user.email);
+    console.log(toAddresses);
+    const email = await this.mailerService.sendMail({
+      to: toAddresses,
+      subject: 'Welcome to Aje App! Anella Testing',
+      template: './welcome', // Template path
+      context: {},
+    });
+
+    console.log('Emails sent to:', toAddresses, email);
   }
 }
