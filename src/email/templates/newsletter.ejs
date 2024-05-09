@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Celebrating Milestones: Ajé Surpasses 1000 Active Users!</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+
+    .email-container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .header, .footer, .icons {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .header h2{
+      margin-bottom: 20px;
+      border-bottom: 2px solid #cccccc; /* Gray border */
+      padding-bottom: 20px; 
+    }
+    .header img, .contentImages img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .content {
+      background-color: white;
+      padding: 20px;
+    }
+
+    .icons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      padding-left:40% ;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      /* Provides consistent spacing between icons */
+    }
+
+    .social-icons img {
+      height: 24px;
+      padding-right: 10px;
+    }
+    .download{
+      display: flex;
+      justify-content: center;
+      direction: row;
+      padding-left: 40%;
+      padding-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="email-container">
+    <div class="header">
+      <img src="https://res.cloudinary.com/ddq2jimve/image/upload/v1714977685/3cf63154-92b6-5e2c-e981-354d9b04277f_tquou8.png" alt="AJE Logo" class="logo">
+      <h2>Celebrating Milestones: Ajé Surpasses 1000 Active Users!</h2>
+    </div>
+    <div class="content">
+      <p style="color: #666666">Dear <%=name%>,</p>
+      <p style="color: #666666">As we celebrate<a href="<%=aje_url %>"> </a>surpassing the landmark of 1000 active users, it's a moment of pride and reflection. Our journey has been remarkable, made possible by our vibrant community of micro-entrepreneurs who bring life and diversity to our platform. Today, we want to spotlight five incredible users who exemplify the spirit of <a href="<%= aje_url %>"> Ajé </a>.</p>
+    <div class="download"><a href="<%=download_url %>"> <button style="color: white; background-color:black; padding: 10px; border-radius:8px; ">Download</button></a></div>  
+    
+      <div class="contentImages">
+        <img src="https://res.cloudinary.com/ddq2jimve/image/upload/v1714977727/e945f6fe-6dd2-f748-810c-1c43ec3e236c_ahc3pl.jpg" alt="AJE Logo" class="logo">
+        <img src="https://res.cloudinary.com/ddq2jimve/image/upload/v1714977753/70484a9d-f405-8df2-81f3-8ecb93db9302_ix3cop.jpg" alt="AJE Logo" class="logo">
+        <img src="https://res.cloudinary.com/ddq2jimve/image/upload/v1714977795/bd7c8ead-f6f5-2da1-f1e6-fa0253b5c72f_pca5ck.jpg" alt="AJE Logo" class="logo">
+      </div>
+    </div>
+    <div class="footer">© 2024 AJE. All rights reserved.</div>
+    <div class="icons">
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/company/aje" target="_blank"><img src="https://res.cloudinary.com/ddq2jimve/image/upload/v1714990298/3536505_rynt5q.png" alt="LinkedIn"></a>
+        <a href="https://www.instagram.com/aje" target="_blank"><img src="https://res.cloudinary.com/ddq2jimve/image/upload/v1714990333/2111463_avvyqg.png" alt="Instagram"></a>
+        <a href="https://twitter.com/aje" target="_blank"><img src="https://res.cloudinary.com/ddq2jimve/image/upload/v1714990248/5968830_uvojmq.png" alt="Twitter"></a>
+        <a href="https://www.facebook.com/aje" target="_blank"><img src="https://res.cloudinary.com/ddq2jimve/image/upload/v1714990451/2504903_z0wbky.png" alt="Facebook"></a>
+      </div>
+    </div>
+    <p style="color: #666666; margin-top: 20px">If you did not request to join AJE, please ignore this email.</p>
+  </body>
+</html>

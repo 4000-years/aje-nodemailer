@@ -10,14 +10,18 @@ export class EmailService {
 
   async sendUserWelcome(user: User, token: string) {
     const confirmation_url = `example.com/auth/confirm?token=${token}`;
-
+    const aje_url = 'https://ajeinc.app/';
+    const download_url =
+      'https://play.google.com/store/apps/details?id=com.aje.app&pcampaignid=web_share';
     const email = await this.mailerService.sendMail({
       to: user.email,
       subject: 'Welcome to Aje App! Anella Testing',
-      template: './welcome',
+      template: './newsletter',
       context: {
         name: user.name,
         confirmation_url,
+        aje_url,
+        download_url,
       },
     });
     console.log(email);
@@ -25,12 +29,20 @@ export class EmailService {
 
   async sendUserEmails(userData: Users) {
     const toAddresses = userData.users.map((user) => user.email);
+    const name = userData.users.map((user) => user.name);
     console.log(toAddresses);
+    const aje_url = 'https://ajeinc.app/';
+    const download_url =
+      'https://play.google.com/store/apps/details?id=com.aje.app&pcampaignid=web_share';
     const email = await this.mailerService.sendMail({
       to: toAddresses,
       subject: 'Welcome to Aje App! Anella Testing',
-      template: './welcome', // Template path
-      context: {},
+      template: './newsletter',
+      context: {
+        name: name,
+        aje_url,
+        download_url,
+      },
     });
 
     console.log('Emails sent to:', toAddresses, email);
