@@ -36,7 +36,7 @@ export class EmailService {
       'https://play.google.com/store/apps/details?id=com.aje.app&pcampaignid=web_share';
     const email = await this.mailerService.sendMail({
       to: toAddresses,
-      subject: 'Welcome to Aje App! Anella Testing',
+      subject: 'Welcome to Aje App! Anella Testing for ALX Survey',
       template: './newsletter',
       context: {
         name: name,
