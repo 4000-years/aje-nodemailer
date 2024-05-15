@@ -5,7 +5,7 @@ export default defineConfig({
   out: './drizzle',
   dialect: 'postgresql',
   dbCredentials: {
-    url: 'postgres://postgres.apgghnnyefvraemuoixq:Ajells23p813@aws-0-us-west-1.pooler.supabase.com:5432/postgres',
+    url: 'postgres://postgres.apgghnnyefvraemuoixq:Ajells23p813@aws-0-us-west-1.pooler.supabase.com:6543/postgres',
   },
 
   verbose: true,

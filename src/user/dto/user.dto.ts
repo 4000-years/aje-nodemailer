@@ -1,4 +1,5 @@
 export class Createuserdto {
-  public full_Name: string;
+  public firstName: string;
+  public lastName: string;
   public email: string;
 }
