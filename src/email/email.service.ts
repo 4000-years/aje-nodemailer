@@ -18,7 +18,7 @@ export class EmailService {
       subject: 'Welcome to Aje App! Anella Testing',
       template: './newsletter',
       context: {
-        name: user.name,
+        name: user.fullName,
         confirmation_url,
         aje_url,
         download_url,
@@ -29,7 +29,7 @@ export class EmailService {
 
   async sendUserEmails(userData: Users) {
     const toAddresses = userData.users.map((user) => user.email);
-    const name = userData.users.map((user) => user.name);
+    const name = userData.users.map((user) => user.fullName);
     console.log(toAddresses);
     const aje_url = 'https://ajeinc.app/';
     const download_url =
